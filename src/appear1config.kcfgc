@@ -1,0 +1,4 @@
+File=appear1.kcfg
+ClassName=Appear1Config
+Singleton=true
+Mutators=true
