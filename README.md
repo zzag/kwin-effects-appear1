@@ -2,9 +2,9 @@
 
 "Appear 1" is a KWin effect that animates appearing of windows.
 
-# Installing
+## Installing
 
-## From source
+### From source
 
 ```sh
 git clone https://github.com/zzag/kwin-effects-appear1.git
