@@ -4,6 +4,11 @@
 
 ## Installing
 
+### Arch Linux
+
+For Arch Linux [kwin-effects-appear1](https://aur.archlinux.org/packages/kwin-effects-appear1/)
+is available in the AUR.
+
 ### From source
 
 ```sh
