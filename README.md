@@ -2,7 +2,7 @@
 
 "Appear 1" is a KWin effect that animates appearing of windows.
 
-## Installing
+## Installation
 
 ### Arch Linux
 
