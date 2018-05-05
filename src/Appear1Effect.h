@@ -18,6 +18,9 @@
 #ifndef EFFECTS_APPEAR1_H
 #define EFFECTS_APPEAR1_H
 
+// own
+#include "Timeline.h"
+
 // kwineffects
 #include <kwineffects.h>
 
@@ -25,7 +28,6 @@
 #include <QHash>
 #include <QSet>
 #include <QString>
-#include <QTimeLine>
 
 class Appear1Effect : public KWin::Effect {
 public:
@@ -52,7 +54,7 @@ private:
 
 private:
     QSet<QString> m_blacklist;
-    QHash<const KWin::EffectWindow*, QTimeLine*> m_animations;
+    QHash<const KWin::EffectWindow*, Timeline> m_animations;
     int m_duration;
     qreal m_opacity;
     qreal m_shift;
