@@ -1,5 +1,5 @@
 Name:           kwin-effects-appear1
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Effect that animates the appearing of windows
 
@@ -46,6 +46,9 @@ make %{?_smp_mflags} -C %{_target_platform}
 %{_kf5_qtplugindir}/kwin/effects/plugins/libkwin4_effect_appear1.so
 
 %changelog
+* Sat May 05 2018 Vlad Zagorodniy <vladzzag@gmail.com> - 1.2-1
+- Update to upstream
+
 * Fri May 04 2018 Vlad Zagorodniy <vladzzag@gmail.com> - 1.1-1
 - Initial commit
 
