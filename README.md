@@ -17,6 +17,13 @@ sudo dnf refresh
 sudo dnf install kwin-effects-appear1
 ```
 
+### Ubuntu
+
+```sh
+sudo add-apt-repository ppa:vladzzag/kwin-effects
+sudo apt install libkwin4-effect-appear1
+```
+
 ### From source
 
 ```sh
