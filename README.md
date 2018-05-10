@@ -24,7 +24,24 @@ sudo add-apt-repository ppa:vladzzag/kwin-effects
 sudo apt install libkwin4-effect-appear1
 ```
 
-### From source
+### Build from source
+
+#### Prerequisites
+
+* Arch Linux(Manjaro, etc)
+  ```sh
+  sudo pacman -S cmake extra-cmake-modules kwin
+  ```
+* Debian, Ubuntu(Kubuntu, Neon, etc)
+  ```sh
+  sudo apt install cmake extra-cmake-modules kwin-dev libkf5config-dev libkf5coreaddons-dev libkf5windowsystem-dev qtbase5-dev
+  ```
+* Fedora
+  ```sh
+  sudo dnf install cmake extra-cmake-modules kf5-kconfig-devel kf5-kcoreaddons-devel kf5-kwindowsystem-devel kwin-devel qt5-qtbase-devel
+  ```
+
+#### Build
 
 ```sh
 git clone https://github.com/zzag/kwin-effects-appear1.git
