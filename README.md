@@ -28,11 +28,11 @@ sudo apt install libkwin4-effect-appear1
 
 #### Prerequisites
 
-* Arch Linux(Manjaro, etc)
+* Arch Linux
   ```sh
   sudo pacman -S cmake extra-cmake-modules kwin
   ```
-* Debian, Ubuntu(Kubuntu, Neon, etc)
+* Ubuntu
   ```sh
   sudo apt install cmake extra-cmake-modules kwin-dev libkf5config-dev libkf5coreaddons-dev libkf5windowsystem-dev qtbase5-dev
   ```
