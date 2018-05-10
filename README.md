@@ -32,13 +32,13 @@ sudo apt install libkwin4-effect-appear1
   ```sh
   sudo pacman -S cmake extra-cmake-modules kwin
   ```
-* Ubuntu
-  ```sh
-  sudo apt install cmake extra-cmake-modules kwin-dev libkf5config-dev libkf5coreaddons-dev libkf5windowsystem-dev qtbase5-dev
-  ```
 * Fedora
   ```sh
   sudo dnf install cmake extra-cmake-modules kf5-kconfig-devel kf5-kcoreaddons-devel kf5-kwindowsystem-devel kwin-devel qt5-qtbase-devel
+  ```
+* Ubuntu
+  ```sh
+  sudo apt install cmake extra-cmake-modules kwin-dev libkf5config-dev libkf5coreaddons-dev libkf5windowsystem-dev qtbase5-dev
   ```
 
 #### Build
