@@ -101,7 +101,7 @@ void Appear1Effect::paintWindow(KWin::EffectWindow* w, int mask, QRegion region,
     if (it != m_animations.cend()) {
         const qreal t = (*it).value();
 
-        const qreal scale = distanceToScale(interpolate(m_distance, 0, t), w->width());
+        const qreal scale = distanceToScale(interpolate(m_distance, 0, t), qMax(w->width(), w->height()));
         const qreal shift = interpolate(m_shift, 0, t);
 
         data.setXScale(scale);
