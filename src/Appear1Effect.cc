@@ -20,6 +20,19 @@
 // KConfigSkeleton
 #include "appear1config.h"
 
+// Qt
+#include <QtMath>
+
+namespace {
+const qreal s_fov = qTan(qDegreesToRadians(30.0));
+
+inline qreal distanceToScale(qreal distance, qreal size)
+{
+    Q_ASSERT(size > 0);
+    return 1.0 - qMin(1.0, 2.0 * distance * s_fov / size);
+}
+}
+
 Appear1Effect::Appear1Effect()
 {
     initConfig<Appear1Config>();
@@ -88,8 +101,13 @@ void Appear1Effect::paintWindow(KWin::EffectWindow* w, int mask, QRegion region,
     if (it != m_animations.cend()) {
         const qreal t = (*it).value();
 
-        data.setYTranslation(interpolate(m_shift, 0, t));
-        data.setZTranslation(interpolate(m_distance, 0, t));
+        const qreal scale = distanceToScale(interpolate(m_distance, 0, t), qMax(w->width(), w->height()));
+        const qreal shift = interpolate(m_shift, 0, t);
+
+        data.setXScale(scale);
+        data.setYScale(scale);
+        data.setXTranslation(0.5 * (1 - scale) * w->width());
+        data.setYTranslation(0.5 * (1 - scale) * w->height() + shift);
         data.multiplyOpacity(interpolate(m_opacity, 1, t));
     }
 

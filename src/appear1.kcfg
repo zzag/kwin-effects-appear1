@@ -20,7 +20,7 @@
             <default>5</default>
         </entry>
         <entry name="Distance" type="Double">
-            <default>-10</default>
+            <default>10</default>
         </entry>
     </group>
 </kcfg>
