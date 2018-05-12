@@ -21,7 +21,6 @@
 #include "appear1config.h"
 
 // Qt
-#include <QDebug>
 #include <QtMath>
 
 namespace {
