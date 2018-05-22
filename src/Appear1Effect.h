@@ -57,8 +57,7 @@ private:
     QHash<const KWin::EffectWindow*, Timeline> m_animations;
     int m_duration;
     qreal m_opacity;
-    qreal m_shift;
-    qreal m_distance;
+    qreal m_scale;
 };
 
 inline int Appear1Effect::requestedEffectChainPosition() const

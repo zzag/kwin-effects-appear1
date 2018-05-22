@@ -15,23 +15,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+// own
 #include "Appear1Effect.h"
 
 // KConfigSkeleton
 #include "appear1config.h"
-
-// Qt
-#include <QtMath>
-
-namespace {
-const qreal s_fov = qTan(qDegreesToRadians(30.0));
-
-inline qreal distanceToScale(qreal distance, qreal size)
-{
-    Q_ASSERT(size > 0);
-    return 1.0 - qMin(1.0, 2.0 * distance * s_fov / size);
-}
-}
 
 Appear1Effect::Appear1Effect()
 {
@@ -62,8 +50,7 @@ void Appear1Effect::reconfigure(ReconfigureFlags flags)
             ? Appear1Config::duration()
             : 160);
     m_opacity = Appear1Config::opacity();
-    m_shift = Appear1Config::shift();
-    m_distance = Appear1Config::distance();
+    m_scale = Appear1Config::scale();
 }
 
 void Appear1Effect::prePaintScreen(KWin::ScreenPrePaintData& data, int time)
@@ -101,13 +88,12 @@ void Appear1Effect::paintWindow(KWin::EffectWindow* w, int mask, QRegion region,
     if (it != m_animations.cend()) {
         const qreal t = (*it).value();
 
-        const qreal scale = distanceToScale(interpolate(m_distance, 0, t), qMax(w->width(), w->height()));
-        const qreal shift = interpolate(m_shift, 0, t);
+        const qreal scale = interpolate(m_scale, 1, t);
 
         data.setXScale(scale);
         data.setYScale(scale);
         data.setXTranslation(0.5 * (1 - scale) * w->width());
-        data.setYTranslation(0.5 * (1 - scale) * w->height() + shift);
+        data.setYTranslation((1 - scale) * w->height());
         data.multiplyOpacity(interpolate(m_opacity, 1, t));
     }
 
@@ -130,8 +116,7 @@ bool Appear1Effect::isActive() const
 
 bool Appear1Effect::supported()
 {
-    return KWin::effects->isOpenGLCompositing()
-        && KWin::effects->animationsSupported();
+    return KWin::effects->animationsSupported();
 }
 
 bool Appear1Effect::shouldAnimate(const KWin::EffectWindow* w) const
