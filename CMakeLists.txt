@@ -3,7 +3,6 @@ project (kwin-effects-appear1)
 
 include (FeatureSummary)
 
-add_definitions (-Wall -Werror)
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS OFF)
